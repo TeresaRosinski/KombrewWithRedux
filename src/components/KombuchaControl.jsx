@@ -1,6 +1,7 @@
 import React from "react";
 import NewKombuchaForm from "./NewKombuchaForm"; //Kombucha is the parent to both form and list=== we need to import both here
 import KombuchaList from "./KombuchaList";
+import KombuchaDetail from "./KombuchaDetail";
 
 class KombuchaControl extends React.Component {
   constructor(props) {
@@ -11,6 +12,12 @@ class KombuchaControl extends React.Component {
       selectedKombucha: null,
     };
   }
+  handleChangingSelectedKombucha = (id) => {
+    const selectedKombucha = this.state.masterKombuchaList.filter(
+      (kombucha) => kombucha.id === id
+    )[0];
+    this.setState({ selectedKombucha: selectedKombucha });
+  };
   handleAddingNewKombuchaToList = (newKombucha) => {
     const newMasterKombuchaList = this.state.masterKombuchaList.concat(
       newKombucha
@@ -31,7 +38,13 @@ class KombuchaControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     let addKombuchaButton = null;
-    if (this.state.formVisibleOnPage) {
+
+    if (this.selectedKombucha != null) {
+      currentlyVisibleState = (
+        <KombuchaDetail kombucha={this.state.selectedKombucha} />
+      );
+      buttonText = "See All Kombuchas";
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
         <NewKombuchaForm
           onNewKombuchaCreation={this.handleAddingNewKombuchaToList}
@@ -40,7 +53,10 @@ class KombuchaControl extends React.Component {
       buttonText = "See All Kombucha Kegs";
     } else {
       currentlyVisibleState = (
-        <KombuchaList kombuchaList={this.state.masterKombuchaList} />
+        <KombuchaList
+          kombuchaList={this.state.masterKombuchaList}
+          onKombuchaSelection={this.handleChangingSelectedKombucha}
+        />
       );
       buttonText = "Add Kombucha Keg";
     }
