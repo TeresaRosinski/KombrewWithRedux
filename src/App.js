@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
+import NameList from "./components/NameList";
 
 function App() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = today.getFullYear();
+
+  let todayString = mm + "/" + dd + "/" + yyyy;
+
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <main className="container">
+        <h1>Hello Beautiful</h1>
+        <p>{todayString}</p>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {today.getHours()}:{today.getMinutes()}:{today.getSeconds()}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>You clicked {count} times</p>
+        <button onClick={increment}>Click me</button>
+        <hr></hr>
+        <NameList></NameList>
+      </main>
     </div>
   );
 }
