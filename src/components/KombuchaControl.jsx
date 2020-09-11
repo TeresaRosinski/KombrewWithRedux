@@ -10,6 +10,15 @@ class KombuchaControl extends React.Component {
       masterKombuchaList: [],
     };
   }
+  handleAddingNewKombuchaToList = (newKombucha) => {
+    const newMasterKombuchaList = this.state.masterKombuchaList.concat(
+      newKombucha
+    );
+    this.setState({
+      masterKombuchaList: newMasterKombuchaList,
+      formVisibleOnPage: false,
+    });
+  };
 
   handleClick = () => {
     this.setState((prevState) => ({
@@ -22,7 +31,11 @@ class KombuchaControl extends React.Component {
     let buttonText = null;
     let addKombuchaButton = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKombuchaForm />;
+      currentlyVisibleState = (
+        <NewKombuchaForm
+          onNewKombuchaCreation={this.handleAddingNewKombuchaToList}
+        />
+      );
       buttonText = "See All Kombucha Kegs";
     } else {
       currentlyVisibleState = (

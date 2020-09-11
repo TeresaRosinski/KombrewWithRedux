@@ -1,5 +1,6 @@
 import React from "react";
 import { v4 } from "uuid";
+import PropTypes from "prop-types";
 
 function NewKombuchaForm(props) {
   return (
@@ -18,8 +19,16 @@ function NewKombuchaForm(props) {
       </form>
     </React.Fragment>
   );
+
   function handleNewKombuchaFormSubmission(event) {
     event.preventDefault();
+    props.onNewKombuchaCreation({
+      name: event.target.name.value,
+      brand: event.target.brand.value,
+      flavor: event.target.flavor.value,
+      alcoholContent: event.target.alcoholContent.value,
+      price: event.target.price.value,
+    });
     console.log(event.target.name.value);
     console.log(event.target.brand.value);
     console.log(event.target.flavor.value);
@@ -27,4 +36,5 @@ function NewKombuchaForm(props) {
     console.log(event.target.price.value);
   }
 }
+NewKombuchaForm.propTypes = { onNewKombuchaCreation: PropTypes.func };
 export default NewKombuchaForm;
