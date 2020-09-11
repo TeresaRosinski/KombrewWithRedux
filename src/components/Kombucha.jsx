@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Kombucha() {
+function Kombucha(props) {
   return (
     <React.Fragment>
       <h3>
@@ -12,7 +12,7 @@ function Kombucha() {
     </React.Fragment>
   );
 }
-Kombucha.PropTypes = {
+Kombucha.propTypes = {
   name: PropTypes.string,
   flavor: PropTypes.string,
   brand: PropTypes.string,

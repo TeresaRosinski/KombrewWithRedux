@@ -1,6 +1,8 @@
 import React from "react";
 import Kombucha from "./Kombucha";
 
+const masterKombuchaList = [];
+
 function KombuchaList() {
   return (
     <React.Fragment>
