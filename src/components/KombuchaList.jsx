@@ -6,18 +6,29 @@ function KombuchaList(props) {
   return (
     <React.Fragment>
       <hr />
-      {props.kombuchaList.map((kombucha) => (
-        <Kombucha
-          whenKombuchaClicked={props.onKombuchaSelection}
-          name={kombucha.name}
-          brand={kombucha.brand}
-          price={kombucha.price}
-          alcoholContent={kombucha.alcoholContent}
-          flavor={kombucha.flavor}
-          id={kombucha.id}
-          key={kombucha.key}
-        />
-      ))}
+
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Kombucha Name</th>
+            <th scope="col">Kombucha Brand</th>
+            <th scope="col">Flavor</th>
+            <th scope="col">Price</th>
+            <th scope="col">Alcohol Content</th>
+          </tr>
+        </thead>
+        {props.kombuchaList.map((kombucha) => (
+          <tbody>
+            <td>{kombucha.id}</td>
+            <td>{kombucha.name}</td>
+            <td>{kombucha.flavor}</td>
+            <td>{kombucha.brand}</td>
+            <td>{kombucha.alcoholContent}</td>
+            <td>{kombucha.price}</td>
+          </tbody>
+        ))}
+      </table>
     </React.Fragment>
   );
 }
