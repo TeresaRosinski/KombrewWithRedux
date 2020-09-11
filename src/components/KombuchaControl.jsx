@@ -1,14 +1,22 @@
 import React from "react";
-import NewKombuchaForm from "./NewKombuchaForm";
+import NewKombuchaForm from "./NewKombuchaForm"; //Kombucha is the parent to both form and list=== we need to import both here
 import NewKombuchaList from "./KombuchaList";
 
 class KombuchaControl extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      formVisibleOnPage: false,
+    };
   }
   render() {
-    return <React.Fragment></React.Fragment>;
+    let currentlyVisibleState = null;
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewKombuchaForm />;
+    } else {
+      currentlyVisibleState = <KombuchaList />;
+    }
+    return <React.Fragment>{currentlyVisibleState}</React.Fragment>;
   }
 }
 export default KombuchaControl;
