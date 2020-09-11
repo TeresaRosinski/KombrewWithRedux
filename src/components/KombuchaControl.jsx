@@ -7,6 +7,7 @@ class KombuchaControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
+      masterKombuchaList: [],
     };
   }
 
@@ -24,7 +25,9 @@ class KombuchaControl extends React.Component {
       currentlyVisibleState = <NewKombuchaForm />;
       buttonText = "See All Kombucha Kegs";
     } else {
-      currentlyVisibleState = <KombuchaList />;
+      currentlyVisibleState = (
+        <KombuchaList kombuchaList={this.state.masterKombuchaList} />
+      );
       buttonText = "Add Kombucha Keg";
     }
     return (
