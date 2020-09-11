@@ -7,7 +7,6 @@ function Kombucha(props) {
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Kombucha Name</th>
             <th scope="col">Kombucha Brand</th>
             <th scope="col">Flavor</th>
@@ -16,7 +15,6 @@ function Kombucha(props) {
           </tr>
         </thead>
         <tbody>
-          <td></td>
           <td>{props.name}</td>
           <td>{props.flavor}</td>
           <td>{props.brand}</td>

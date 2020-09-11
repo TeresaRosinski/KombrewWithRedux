@@ -8,6 +8,7 @@ class KombuchaControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterKombuchaList: [],
+      selectedKombucha: null,
     };
   }
   handleAddingNewKombuchaToList = (newKombucha) => {
