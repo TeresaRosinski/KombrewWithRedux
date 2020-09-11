@@ -46,7 +46,9 @@ class KombuchaControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button className="btn btn-light" onClick={this.handleClick}>
+          {buttonText}
+        </button>
       </React.Fragment>
     );
   }

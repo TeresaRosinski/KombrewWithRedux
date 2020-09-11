@@ -6,16 +6,65 @@ function NewKombuchaForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={handleNewKombuchaFormSubmission}>
-        <input type="text" name="name" placeholder="Kombucha Name" />
-        <input type="text" name="brand" placeholder="Kombucha Brand" />
-        <input type="text" name="flavor" placeholder="Kombucha Flavor" />
-        <input type="number" name="price" placeholder="Price Per Pint" />
-        <input
-          type="number"
-          name="alcoholContent"
-          placeholder="Alcohol Content"
-        />
-        <button type="submit">Add Me</button>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label>Kombucha Name</label>
+              </td>
+              <td>
+                <input type="text" name="name" placeholder="Kombucha Name" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Kombucha Brand</label>
+              </td>
+              <td>
+                <input type="text" name="brand" placeholder="Kombucha Brand" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Flavor</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="flavor"
+                  placeholder="Kombucha Flavor"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Price</label>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  name="price"
+                  placeholder="Price Per Pint"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Alcohol Content</label>
+              </td>
+              <td>
+                <input
+                  type="number"
+                  name="alcoholContent"
+                  placeholder="Alcohol Content"
+                />
+              </td>
+            </tr>
+            <button type="submit" className="btn btn-light">
+              Add Me
+            </button>
+          </tbody>
+        </table>
       </form>
     </React.Fragment>
   );

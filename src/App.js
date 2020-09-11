@@ -6,8 +6,10 @@ import KombuchaControl from "./components/KombuchaControl";
 function App() {
   return (
     <React.Fragment>
-      <Header />
-      <KombuchaControl />
+      <main className="container">
+        <Header />
+        <KombuchaControl />
+      </main>
     </React.Fragment>
   );
 }
