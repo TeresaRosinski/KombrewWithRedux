@@ -12,12 +12,14 @@ class KombuchaControl extends React.Component {
       selectedKombucha: null,
     };
   }
+
   handleChangingSelectedKombucha = (id) => {
     const selectedKombucha = this.state.masterKombuchaList.filter(
       (kombucha) => kombucha.id === id
     )[0];
     this.setState({ selectedKombucha: selectedKombucha });
   };
+
   handleAddingNewKombuchaToList = (newKombucha) => {
     const newMasterKombuchaList = this.state.masterKombuchaList.concat(
       newKombucha
@@ -29,6 +31,12 @@ class KombuchaControl extends React.Component {
   };
 
   handleClick = () => {
+    if (this.state.selectedKombucha != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedKombucha: null,
+      });
+    }
     this.setState((prevState) => ({
       formVisibleOnPage: !prevState.formVisibleOnPage,
     }));

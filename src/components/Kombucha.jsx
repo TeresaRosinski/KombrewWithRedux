@@ -1,29 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
+import KombuchaList from "./KombuchaList";
+import KombuchaDetail from "./KombuchaDetail";
 function Kombucha(props) {
   return (
     <React.Fragment>
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Kombucha Name</th>
-            <th scope="col">Kombucha Brand</th>
-            <th scope="col">Flavor</th>
-            <th scope="col">Price</th>
-            <th scope="col">Alcohol Content</th>
-          </tr>
-        </thead>
-        <tbody onClick={() => props.whenKombuchaClicked(props.id)}>
-          <td>{props.id}</td>
-          <td>{props.name}</td>
-          <td>{props.flavor}</td>
-          <td>{props.brand}</td>
-          <td>{props.alcoholContent}</td>
-          <td>{props.price}</td>
-        </tbody>
-      </table>
+      <div onClick={() => props.whenKombuchaClicked(props.id)}>
+        <h2>
+          {props.name} - {props.flavor} - {props.brand}
+        </h2>
+        <ul>
+          <li>{props.price}</li>
+          <li>{props.alcoholContent}</li>
+          <li>{props.id}</li>
+        </ul>
+        <button onClick={() => props.whenKombuchaClicked(props.id)}>lol</button>
+      </div>
     </React.Fragment>
   );
 }
@@ -33,7 +26,7 @@ Kombucha.propTypes = {
   brand: PropTypes.string,
   alcoholContent: PropTypes.number,
   price: PropTypes.number,
-  id: PropTypes.number,
+  id: PropTypes.string,
   whenKombuchaClicked: PropTypes.func,
 };
 export default Kombucha;

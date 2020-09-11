@@ -77,6 +77,7 @@ function NewKombuchaForm(props) {
       flavor: event.target.flavor.value,
       alcoholContent: event.target.alcoholContent.value,
       price: event.target.price.value,
+      id: v4(), //this was missing
     });
     console.log(event.target.name.value);
     console.log(event.target.brand.value);
