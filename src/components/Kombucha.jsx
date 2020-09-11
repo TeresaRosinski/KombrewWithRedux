@@ -4,11 +4,26 @@ import PropTypes from "prop-types";
 function Kombucha(props) {
   return (
     <React.Fragment>
-      <h3>
-        {props.name} - {props.flavor} - {props.brand}
-      </h3>
-      <h4>{props.alcoholContent}</h4>
-      <h4>{props.price}</h4>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kombucha Name</th>
+            <th scope="col">Kombucha Brand</th>
+            <th scope="col">Flavor</th>
+            <th scope="col">Price</th>
+            <th scope="col">Alcohol Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td></td>
+          <td>{props.name}</td>
+          <td>{props.flavor}</td>
+          <td>{props.brand}</td>
+          <td>{props.alcoholContent}</td>
+          <td>{props.price}</td>
+        </tbody>
+      </table>
     </React.Fragment>
   );
 }
