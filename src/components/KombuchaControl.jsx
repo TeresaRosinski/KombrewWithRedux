@@ -15,6 +15,7 @@ class KombuchaControl extends React.Component {
       currentlyVisibleState = <NewKombuchaForm />;
     } else {
       currentlyVisibleState = <KombuchaList />;
+      addKombucha = <button onClick={this.handleClick}>Add Kombucha</button>;
     }
     return <React.Fragment>{currentlyVisibleState}</React.Fragment>;
   }
