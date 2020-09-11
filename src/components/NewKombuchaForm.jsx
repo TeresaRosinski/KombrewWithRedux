@@ -14,8 +14,17 @@ function NewKombuchaForm(props) {
           name="alcoholContent"
           placeholder="Alcohol Content"
         />
+        <button type="submit">Add Me</button>
       </form>
     </React.Fragment>
   );
+  function handleNewKombuchaFormSubmission(event) {
+    event.preventDefault();
+    console.log(event.target.name.value);
+    console.log(event.target.brand.value);
+    console.log(event.target.flavor.value);
+    console.log(event.target.alcoholContent.value);
+    console.log(event.target.price.value);
+  }
 }
 export default NewKombuchaForm;
