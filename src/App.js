@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import "./App.css";
-import NameList from "./components/NameList";
-
+import Header from "./Header";
 function App() {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
