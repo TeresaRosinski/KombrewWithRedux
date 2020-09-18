@@ -14,7 +14,7 @@ function KombuchaDetail(props) {
       <h3>{kombucha.alcoholContent}</h3>
       <h3>{kombucha.pints}</h3>
       <button onClick={() => onClickingDelete(kombucha.id)}>
-        Delete This Keg
+        Drink a Pint
       </button>
     </React.Fragment>
   );
