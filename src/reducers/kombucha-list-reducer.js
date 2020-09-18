@@ -25,7 +25,7 @@ export default (state = {}, action) => {
           flavor: flavor,
           price: price,
           alcoholContent: alcoholContent,
-          pints: (pints = -1),
+          pints: (pints -= 1),
           id: id,
         },
       });

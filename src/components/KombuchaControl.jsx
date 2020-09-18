@@ -9,7 +9,6 @@ class KombuchaControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterKombuchaList: [],
       selectedKombucha: null,
     };
   }
@@ -48,13 +47,28 @@ class KombuchaControl extends React.Component {
   };
 
   handleAddingNewKombuchaToList = (newKombucha) => {
-    const newMasterKombuchaList = this.state.masterKombuchaList.concat(
-      newKombucha
-    );
-    this.setState({
-      masterKombuchaList: newMasterKombuchaList,
-      formVisibleOnPage: false,
-    });
+    const { dispatch } = this.props;
+    const {
+      id,
+      name,
+      brand,
+      flavor,
+      alcoholContent,
+      price,
+      pints,
+    } = newKombucha;
+    const action = {
+      type: "ADD_KOMBUCHA",
+      id: id,
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      alcoholContent: alcoholContent,
+      price: price,
+      pints: pints,
+    };
+    dispatch(action);
+    this.setState({ formVisibleOnPage: false });
   };
 
   handleClick = () => {
