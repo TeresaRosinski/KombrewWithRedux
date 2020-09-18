@@ -3,6 +3,7 @@ import NewKombuchaForm from "./NewKombuchaForm"; //Kombucha is the parent to bot
 import KombuchaList from "./KombuchaList";
 import KombuchaDetail from "./KombuchaDetail";
 import { connect } from "react-redux";
+import PropType from "prop-types";
 
 class KombuchaControl extends React.Component {
   constructor(props) {
@@ -40,9 +41,7 @@ class KombuchaControl extends React.Component {
   };
 
   handleChangingSelectedKombucha = (id) => {
-    const selectedKombucha = this.state.masterKombuchaList.filter(
-      (kombucha) => kombucha.id === id
-    )[0];
+    const selectedKombucha = this.props.masterKombuchaList[id];
     this.setState({ selectedKombucha: selectedKombucha });
   };
 
@@ -105,7 +104,7 @@ class KombuchaControl extends React.Component {
     } else {
       currentlyVisibleState = (
         <KombuchaList
-          kombuchaList={this.state.masterKombuchaList}
+          kombuchaList={this.props.masterKombuchaList}
           onKombuchaSelection={this.handleChangingSelectedKombucha}
         />
       );
@@ -121,5 +120,13 @@ class KombuchaControl extends React.Component {
     );
   }
 }
-KombuchaControl = connect()(KombuchaControl);
+KombuchaControl.PropTypes = {
+  masterKombuchaList: PropTypes.object,
+};
+const mapStateToProps = (state) => {
+  return {
+    masterKombuchaList: state,
+  };
+};
+KombuchaControl = connect(mapStateToProps)(KombuchaControl);
 export default KombuchaControl;
