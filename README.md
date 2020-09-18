@@ -25,9 +25,7 @@ As a user I want to be able to decrement batches of Kombucha by the pint.
 
 ## Setup/Installation Requirements
 
-### Required Software
-
-- Clone the GitHub repository by running `git clone https://github.com/TeresaRosinski/Kombrew)` in the terminal.
+- Clone the GitHub repository by running `git clone https://github.com/TeresaRosinski/Kombrew` in the terminal.
 - Or download the ZIP file by clicking on `Code` then `Download ZIP` from this repository.
 - Open the program in a code editor.
 - Type 'npm install' in the command line to install the necessary packages.

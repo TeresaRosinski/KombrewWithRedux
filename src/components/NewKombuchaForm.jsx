@@ -60,11 +60,11 @@ function NewKombuchaForm(props) {
                 />
               </td>
             </tr>
-            <button type="submit" className="btn btn-light">
-              Add Me
-            </button>
           </tbody>
         </table>
+        <button type="submit" className="btn btn-light">
+          Add Me
+        </button>
       </form>
     </React.Fragment>
   );

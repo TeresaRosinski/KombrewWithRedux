@@ -13,9 +13,7 @@ function Kombucha(props) {
         <ul>
           <li>{props.price}</li>
           <li>{props.alcoholContent}</li>
-          <li>{props.id}</li>
         </ul>
-        <button onClick={() => props.whenKombuchaClicked(props.id)}>lol</button>
       </div>
     </React.Fragment>
   );
@@ -24,8 +22,8 @@ Kombucha.propTypes = {
   name: PropTypes.string,
   flavor: PropTypes.string,
   brand: PropTypes.string,
-  alcoholContent: PropTypes.number,
-  price: PropTypes.number,
+  alcoholContent: PropTypes.string,
+  price: PropTypes.string,
   id: PropTypes.string,
   whenKombuchaClicked: PropTypes.func,
 };
