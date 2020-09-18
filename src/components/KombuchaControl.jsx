@@ -13,7 +13,7 @@ class KombuchaControl extends React.Component {
     };
   }
 
-  handleDeletingOnePint = (id) => {
+  handleDeletingKeg = (id) => {
     const newMasterKombuchaList = this.state.masterKombuchaList.filter(
       (kombucha) => kombucha.id !== id
     );
@@ -22,6 +22,23 @@ class KombuchaControl extends React.Component {
       selectedKombucha: null,
     });
   };
+
+  handleDeletingPint = (id) => {
+    const updatedKombuchaList = this.state.masterKombuchaList.map(
+      (kombucha) => {
+        if (kombucha.id === id) {
+          kombucha.pints -= 1;
+        }
+        return kombucha;
+      }
+    );
+
+    this.setState({
+      masterKombuchaList: updatedKombuchaList,
+      selectedKombucha: this.state.selectedKombucha,
+    });
+  };
+
   handleChangingSelectedKombucha = (id) => {
     const selectedKombucha = this.state.masterKombuchaList.filter(
       (kombucha) => kombucha.id === id
@@ -58,7 +75,8 @@ class KombuchaControl extends React.Component {
       currentlyVisibleState = (
         <KombuchaDetail
           kombucha={this.state.selectedKombucha}
-          onClickingDelete={this.handleDeletingOnePint}
+          onClickingDelete={this.handleDeletingPint}
+          onClickingDeletePint={this.handleDeletingPint}
         />
       );
       buttonText = "Return to Kombucha List";
