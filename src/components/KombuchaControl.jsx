@@ -26,7 +26,7 @@ class KombuchaControl extends React.Component {
   handleDeletingPint = (id) => {
     const updatedKombuchaList = this.state.masterKombuchaList.map(
       (kombucha) => {
-        if (kombucha.id === id) {
+        if (kombucha.id === id && kombucha.pints > 0) {
           kombucha.pints -= 1;
         }
         return kombucha;
