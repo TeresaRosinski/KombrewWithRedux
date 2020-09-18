@@ -23,6 +23,7 @@ Kombucha.propTypes = {
   alcoholContent: PropTypes.string,
   price: PropTypes.string,
   id: PropTypes.string,
+  pints: PropTypes.number,
   whenKombuchaClicked: PropTypes.func,
 };
 export default Kombucha;

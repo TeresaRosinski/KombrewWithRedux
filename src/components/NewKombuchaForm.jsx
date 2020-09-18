@@ -78,12 +78,8 @@ function NewKombuchaForm(props) {
       alcoholContent: event.target.alcoholContent.value,
       price: event.target.price.value,
       id: v4(), //this was missing
+      pints: 160, //Add pre-detemined quantity of pints to decrement
     });
-    console.log(event.target.name.value);
-    console.log(event.target.brand.value);
-    console.log(event.target.flavor.value);
-    console.log(event.target.alcoholContent.value);
-    console.log(event.target.price.value);
   }
 }
 NewKombuchaForm.propTypes = { onNewKombuchaCreation: PropTypes.func };

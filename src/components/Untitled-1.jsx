@@ -31,3 +31,14 @@
     </tbody>
   ));
 }
+function decrementPints(){
+  const kombuchaList = this.state.kombuchaList;
+  const kombucha = kombucha.find((k => k.id === props.kombucha.id));
+  const decrementedKombucha = kombucha; 
+  decrementedKombucha.pints -=1;
+  // get your state: this is the kombucha list
+  // change the list: Find the kombucha to decrement, use spread operator to create a new list with your updated kombucha 
+  this.setState({
+ // set state with updated kombucha list
+   kombuchaList: [...kombuchaList.filter((k => k.id === props.kombucha.id)), decrementedKombucha]
+  })

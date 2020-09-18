@@ -16,6 +16,7 @@ function KombuchaList(props) {
           price={kombucha.price}
           id={kombucha.id}
           key={kombucha.key}
+          pints={kombucha.pints}
         />
       ))}
     </React.Fragment>
