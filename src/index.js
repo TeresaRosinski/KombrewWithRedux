@@ -4,13 +4,19 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
+import { createStore } from "redux";
+import reducer from "./reducers/kombucha-list-reducer";
+import { Provider } from "react-redux";
+
+//instantiate the store
+const store = createStore(reducer);
 
 //import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 

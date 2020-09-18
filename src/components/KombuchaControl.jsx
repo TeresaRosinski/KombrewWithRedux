@@ -2,6 +2,7 @@ import React from "react";
 import NewKombuchaForm from "./NewKombuchaForm"; //Kombucha is the parent to both form and list=== we need to import both here
 import KombuchaList from "./KombuchaList";
 import KombuchaDetail from "./KombuchaDetail";
+import { connect } from "react-redux";
 
 class KombuchaControl extends React.Component {
   constructor(props) {
@@ -106,4 +107,5 @@ class KombuchaControl extends React.Component {
     );
   }
 }
+KombuchaControl = connect()(KombuchaControl);
 export default KombuchaControl;
