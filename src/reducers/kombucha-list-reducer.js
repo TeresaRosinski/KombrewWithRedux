@@ -1,7 +1,7 @@
 export default (state = {}, action) => {
   const { name, brand, flavor, price, alcoholContent, pints, id } = action;
   switch (action.type) {
-    case "ADD_Kombucha":
+    case "ADD_KOMBUCHA":
       return Object.assign({}, state, {
         [id]: {
           name: name,
@@ -10,6 +10,7 @@ export default (state = {}, action) => {
           price: price,
           alcoholContent: alcoholContent,
           pints: pints,
+          id: id,
         },
       });
     default:

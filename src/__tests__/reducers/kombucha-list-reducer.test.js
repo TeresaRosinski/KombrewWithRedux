@@ -30,6 +30,7 @@ describe("kombuchaListReducer", () => {
       price: price,
       alcoholContent: alcoholContent,
       pints: pints,
+      id: id,
     };
     expect(kombuchaListReducer({}, action)).toEqual({
       [id]: {
@@ -44,6 +45,7 @@ describe("kombuchaListReducer", () => {
     });
   });
 });
+
 test("Should return default state if there is no action type passed into the reducer", () => {
   expect(kombuchaListReducer({}, { type: null })).toEqual({});
 });
