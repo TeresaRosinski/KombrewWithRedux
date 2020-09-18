@@ -25,7 +25,7 @@ class KombuchaControl extends React.Component {
   };
 
   handleDeletingPint = (id) => {
-    const updatedKombuchaList = this.state.masterKombuchaList.map(
+    const updatedKombuchaList = this.props.masterKombuchaList.map(
       (kombucha) => {
         if (kombucha.id === id && kombucha.pints > 0) {
           kombucha.pints -= 1;
@@ -36,7 +36,7 @@ class KombuchaControl extends React.Component {
 
     this.setState({
       masterKombuchaList: updatedKombuchaList,
-      selectedKombucha: this.state.selectedKombucha,
+      selectedKombucha: this.props.selectedKombucha,
     });
   };
 
@@ -120,8 +120,8 @@ class KombuchaControl extends React.Component {
     );
   }
 }
-KombuchaControl.PropTypes = {
-  masterKombuchaList: PropTypes.object,
+KombuchaControl.PropType = {
+  masterKombuchaList: PropType.object,
 };
 const mapStateToProps = (state) => {
   return {
