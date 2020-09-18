@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 //instantiate the store
 const store = createStore(reducer);
 
+store.subscribe(() => console.log(store.getState()));
 //import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(

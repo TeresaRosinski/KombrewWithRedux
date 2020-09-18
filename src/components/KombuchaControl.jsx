@@ -14,13 +14,13 @@ class KombuchaControl extends React.Component {
   }
 
   handleDeletingKeg = (id) => {
-    const newMasterKombuchaList = this.state.masterKombuchaList.filter(
-      (kombucha) => kombucha.id !== id
-    );
-    this.setState({
-      masterKombuchaList: newMasterKombuchaList,
-      selectedKombucha: null,
-    });
+    const { dispatch } = this.props;
+    const action = {
+      type: "DELETE_KOMBUCHA",
+      id: id,
+    };
+    dispatch(action);
+    this.setState({ selectedKombucha: null });
   };
 
   handleDeletingPint = (id) => {
