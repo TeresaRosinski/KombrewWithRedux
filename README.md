@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Kombrew</strong></h1>
+<h1 align="center"><strong>Kombrew With Redux</strong></h1>
 
 ---
 
