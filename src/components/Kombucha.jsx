@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { v4 } from "uuid";
-import KombuchaList from "./KombuchaList";
-import KombuchaDetail from "./KombuchaDetail";
+
 function Kombucha(props) {
   return (
     <React.Fragment>

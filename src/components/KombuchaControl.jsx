@@ -45,13 +45,11 @@ class KombuchaControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    let addKombuchaButton = null;
-
-    if (this.selectedKombucha != null) {
+    if (this.state.selectedKombucha != null) {
       currentlyVisibleState = (
         <KombuchaDetail kombucha={this.state.selectedKombucha} />
       );
-      buttonText = "See All Kombuchas";
+      buttonText = "Return to Kombucha List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
         <NewKombuchaForm

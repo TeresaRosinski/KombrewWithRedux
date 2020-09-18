@@ -6,7 +6,6 @@ function KombuchaList(props) {
   return (
     <React.Fragment>
       <hr />
-
       {props.kombuchaList.map((kombucha) => (
         <Kombucha
           whenKombuchaClicked={props.onKombuchaSelection}
