@@ -18,14 +18,14 @@ export default (state = {}, action) => {
       delete newState[id];
       return newState;
     case "DELETE_KOMBUCHAPINT":
-      return Object.assign({}, state, {
+      return Object.assign({ ...state }, action, {
         [id]: {
           name: name,
           brand: brand,
           flavor: flavor,
           price: price,
           alcoholContent: alcoholContent,
-          pints: (pints -= 1),
+          pints: (pints = -1),
           id: id,
         },
       });

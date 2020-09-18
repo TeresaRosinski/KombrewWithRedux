@@ -33,7 +33,6 @@ class KombuchaControl extends React.Component {
         return kombucha;
       }
     );
-
     this.setState({
       masterKombuchaList: updatedKombuchaList,
       selectedKombucha: this.props.selectedKombucha,
