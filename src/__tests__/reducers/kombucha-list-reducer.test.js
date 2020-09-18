@@ -64,10 +64,9 @@ describe("kombuchaListReducer", () => {
       },
     });
   });
-
-  test("Should Successfully delete a Kombucha", () => {
+  test("Should Successfully delete a Pint of Kombucha", () => {
     action = {
-      type: "DELETE_KOMBUCHA",
+      type: "DELETE_KOMBUCHAPINT",
       id: 1,
     };
     expect(kombuchaListReducer(currentState, action)).toEqual({
@@ -77,7 +76,7 @@ describe("kombuchaListReducer", () => {
         flavor: "Strawberry",
         price: "5",
         alcoholContent: "5",
-        pints: 127,
+        pints: 126,
         id: 1,
       },
     });
